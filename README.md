@@ -8,3 +8,5 @@ ADD thonsun_dev branch by wokerA
 
 for tranfer history commit
 ADD by thonsun_fix branch workA
+
+ADD feature-C with wrong typo
