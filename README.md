@@ -3,3 +3,5 @@ add thonsun
 
 git commit -a # write commit msg with vim
 git commit -am "short msg"
+
+ADD thonsun_dev branch by wokerA
