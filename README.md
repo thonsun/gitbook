@@ -206,4 +206,20 @@ workerB 加入workerA 开发
 
    
 
-6. 
+6. 代码冲突解决
+
+   ```shell
+   # 在本地新建一个tmp分支，并将远程origin仓库的master分支代码下载到本地tmp分支
+   git fetch origin branch_name:tmp 
+   
+   # 来比较本地代码与刚刚从远程下载下来的代码的区别
+   git diff tmp 
+   
+   # 合并tmp分支到本地的master分支
+   git merge tmp
+   
+   # 如果不想保留temp分支 可以用这步删除
+   git branch -d temp
+   ```
+
+   
