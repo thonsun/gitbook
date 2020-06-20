@@ -96,14 +96,16 @@
 6. revert or goto commit history version
 
    ```shell
-   git reset --hard commit-id
-   # branch 新增内容没有改变，本地repo 不变
+   git reset --hard commit-id (commit id 可前可后)
+   # branch的新增 文件内容没有改变，本地repo 不变
    
    # 查看所有git 提交历史
    git reflog 
+   # git log可以显示所有提交过的版本信息，不包括已经被删除的commit 记录和reset 的操作git reflog是显示所有的操作记录，包括提交，回退的操作。 一般用来找出操作记录中的版本号，进行回退。 git reflog常用于恢复本地的错误操作。
    
    # 冲突解决
    vim filename
+   git add .
    git commit -am "solved merged conflict"
    ```
 
@@ -173,7 +175,7 @@ workerB 加入workerA 开发
 
    ```shell
    # 同步远程repo 指定分支到本地
-   # 会更改本地workspace 内容，即git pull | git checkout branchName1
+   # 会更改本地workspace 内容，即git pull,git checkout branchName1
    
    git checkout -b branchName1 origin/branchName1
    
@@ -194,4 +196,14 @@ workerB 加入workerA 开发
 
    
 
-5. pull merge
+5. pull and merge
+
+   将远程repo 最新的修改同步到本地repo:
+
+   ```shell
+   git pull origin xxxx_branch
+   ```
+
+   
+
+6. 
