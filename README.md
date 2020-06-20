@@ -135,6 +135,33 @@
    
    git rebase -i HEAD~2
    ## pick 改 fixup
+   
+   # rebase 的使用
+   # Rebase f6f90f3..8887a67 onto f6f90f3 (3 commands)
+   #
+   # Commands:
+   # p, pick <commit> = use commit
+   # r, reword <commit> = use commit, but edit the commit message
+   # e, edit <commit> = use commit, but stop for amending
+   # s, squash <commit> = use commit, but meld into previous commit
+   # f, fixup <commit> = like "squash", but discard this commit's log message
+   # x, exec <command> = run command (the rest of the line) using shell
+   # b, break = stop here (continue rebase later with 'git rebase --continue')
+   # d, drop <commit> = remove commit
+   # l, label <label> = label current HEAD with a name
+   # t, reset <label> = reset HEAD to a label
+   # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+   # .       create a merge commit using the original merge commit's
+   # .       message (or the oneline, if no original merge commit was
+   # .       specified). Use -c <commit> to reword the commit message.
+   #
+   # These lines can be re-ordered; they are executed from top to bottom.
+   #
+   # If you remove a line here THAT COMMIT WILL BE LOST.
+   #
+   # However, if you remove everything, the rebase will be aborted.
+   #
+   # Note that empty commits are commented out
    ```
 
    
@@ -217,9 +244,23 @@ workerB 加入workerA 开发
    
    # 合并tmp分支到本地的master分支
    git merge tmp
+   # 不同分支的合并才会出现代码冲突，需要手动解决
+   On branch test_merge_usage
+   You have unmerged paths.
+     (fix conflicts and run "git commit")
+     (use "git merge --abort" to abort the merge)
    
-   # 如果不想保留temp分支 可以用这步删除
-   git branch -d temp
+   Unmerged paths:
+     (use "git add <file>..." to mark resolution)
+   	both modified:   README.md
+   
+   no changes added to commit (use "git add" and/or "git commit -a")
+   
+   # 即手动解决了冲突：1.git add file -> 2.git commit -> git push origin master
+   
+   # 如果不想保留tmp分支 可以用这步删除
+   git branch -d tmp
    ```
 
    
+
